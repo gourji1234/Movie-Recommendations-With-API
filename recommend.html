@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recommended Movies</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Recommended Movies For You</h1>
+  <div class="movie-container">
+    {% for name, poster in movie_data %}
+    <div class="movie-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="{{ poster }}" alt="{{ name }}">
+          <h3>{{ name }}</h3>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="back-button-wrapper">
+    <a href="/" class="button">← Go Back</a>
+  </div>
+</body>
+</html>
